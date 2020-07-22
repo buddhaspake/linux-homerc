@@ -22,7 +22,7 @@ set guitablabel=\[%N]\ %t\ %M
 " PLUGINS!
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox' " Theme
-Plug 'jremmen/vim-ripgrep'
+Plug 'jremmen/vim-ripgrep' " RipGREP
 Plug 'tpope/vim-fugitive' " Git
 Plug 'vim-utils/vim-man'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Finder
@@ -42,11 +42,14 @@ endif
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let mapleader = " "
-let g:netrw_browse_split=2
-let g:netrw_banner = 0
-let g:netrw_winsize = 25
+let g:netrw_liststyle = 3 " Tree explorer
+let g:netrw_browse_split = 3 " Open in tab
+let g:netrw_banner = 0 " Remove header
+let g:netrw_winsize = 25 " Explorer width %
 let g:ctrlp_use_caching = 0
 
+" FZF
+let g:fzf_layout = { 'down': '~25%' }
 " Lightline
 set laststatus=2
 set noshowmode
@@ -57,10 +60,14 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :Undotreeshow<CR>
-nnoremap <leader>ff :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader>ff :wincmd v<bar> :Ex <bar> :vertical resize 20<CR>
 nnoremap <leader>rr :Rg<SPACE>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
+" Working dir
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+" FZF
+nnoremap <leader>fz :FZF<CR>
 " YouCompleteMe!
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
