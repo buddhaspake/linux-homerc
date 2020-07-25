@@ -7,7 +7,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set nu rnu
-"set nowrap " Only Primeagen!
+set nowrap " Thanks Primeagen!
 set smartcase
 set noswapfile
 set nobackup
@@ -64,6 +64,9 @@ nnoremap <leader>ff :wincmd v<bar> :Ex <bar> :vertical resize 20<CR>
 nnoremap <leader>rr :Rg<SPACE>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
+" Global copy/paste
+nnoremap <leader>y "+y<CR>
+nnoremap <leader>p "+gp<CR>
 " Working dir
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 " FZF
