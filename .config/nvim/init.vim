@@ -16,17 +16,12 @@ set undofile
 set incsearch 
 set guitablabel=\[%N]\ %t\ %M
 
-"set colorcolumn=80
-"highlight ColorColumn ctermbg=0 guibg=lightgrey
-
-" PREPARE FOR PLUGIN!
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-" PLUGINS!
-call plug#begin('~/.vim/plugged')
+" Set up vim-plug for NeoVim
+" [1] Run the following command from terminal:
+" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+"       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+" [2] Install plugins:
+call plug#begin()
 Plug 'morhetz/gruvbox' " Theme
 Plug 'jremmen/vim-ripgrep' " RipGREP
 Plug 'tpope/vim-fugitive' " Git
@@ -68,3 +63,7 @@ nnoremap <leader>p "+gp<CR>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 " FZF
 nnoremap <leader>fz :FZF<CR>
+" Sessions
+" Ensure that the directory ~/.config/nvim/sess/ is created...
+nnoremap <leader>ss :mks ~/.config/nvim/sess/
+nnoremap <leader>sl :source ~/.config/nvim/sess/
