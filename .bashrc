@@ -139,6 +139,8 @@ ex ()
 }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
 export FZF_DEFAULT_OPS="--extended"
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
@@ -162,3 +164,11 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# HOMEPAGE for BASH
+cd "/home/sambuddha/code/python"
+conda activate DI_01
+# REMAPS!
+alias noconda="conda deactivate"
+alias conda1="conda deactivate; conda activate DI_01"
+alias conda2="conda deactivate; conda activate R_Test"
