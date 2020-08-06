@@ -63,7 +63,6 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :Undotreeshow<CR>
-nnoremap <leader>rr :Rg<SPACE>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
@@ -76,6 +75,7 @@ nnoremap <leader><space> :noh<CR>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 " FZF
 nnoremap <leader>fz :FZF<CR>
+nnoremap <leader>ff :Rg<SPACE>
 " CoC REMAPS
 " GoTo code navigation.
 nmap <leader>gd <Plug>(coc-definition)
